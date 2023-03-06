@@ -17,7 +17,7 @@ import java.time.LocalDate;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = SpringUnitTestingApplication.class)
+@SpringBootTest(classes = SpringUnitTestingApplication.class)
 @AutoConfigureMockMvc
 public class UserControllerTest {
 
