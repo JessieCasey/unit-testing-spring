@@ -1,9 +1,10 @@
-package com.manager.service;
+package com.manager;
 
 import com.manager.SpringUnitTestingApplication;
 import com.manager.entity.User;
 import com.manager.entity.UserDTO;
 import com.manager.repository.UserRepository;
+import com.manager.service.UserServiceImpl;
 import jakarta.persistence.EntityNotFoundException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

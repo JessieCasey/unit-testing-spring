@@ -1,8 +1,9 @@
-package com.manager.service;
+package com.manager;
 
 import com.manager.SpringUnitTestingApplication;
 import com.manager.entity.User;
 import com.manager.entity.UserDTO;
+import com.manager.service.UserServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
