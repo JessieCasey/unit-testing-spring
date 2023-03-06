@@ -3,6 +3,7 @@ package com.manager.service;
 import com.manager.entity.User;
 import com.manager.entity.UserDTO;
 import com.manager.repository.UserRepository;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -22,11 +23,11 @@ public class UserServiceImpl implements UserService {
 
             return UserDTO.from(referenceById, getAgeByUser(referenceById));
         } else
-            throw new IllegalArgumentException("The user with id: [" + id + "] " + "is not exist");
+            throw new EntityNotFoundException("The user with id: [" + id + "] " + "is not exist");
     }
 
     @Override
     public int getAgeByUser(User user) {
-        return Period.between(user.getBirthday(), LocalDate.now()).getYears();
+        return user != null ? Period.between(user.getBirthday(), LocalDate.now()).getYears() : -1;
     }
 }

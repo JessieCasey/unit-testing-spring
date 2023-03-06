@@ -5,11 +5,10 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
-import java.time.Period;
 
-@Builder
 @Getter
 @Setter
+@Builder
 public class UserDTO {
 
     private Long id;
