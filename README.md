@@ -38,6 +38,16 @@ Let's try to send the request to the endpoint.
 }
 ```
 
+If the user doesn't exist the server return the following: 
+
+```
+{
+    "statusCode": 400,
+    "timestamp": "2023-03-06T15:51:06.413+00:00",
+    "message": "The user with id: [100] does not exist",
+    "request": "uri=/api/users/100"
+}
+```
 ### Tests ⚙️
 
 The project is covered with tests (Unit and E2E).
