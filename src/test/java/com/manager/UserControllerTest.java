@@ -29,7 +29,7 @@ public class UserControllerTest {
     private UserServiceImpl userService;
 
     @Test
-    public void fetchUser_whenGetUserById_thenStatus200() throws Exception {
+    public void fetchUser_whenIdIsValid_thenStatus200() throws Exception {
         long testId = 2;
         int age = 30;
 
@@ -53,7 +53,7 @@ public class UserControllerTest {
     }
 
     @Test
-    public void fetchUser_whenGetUserWithBadId_thenStatus400() throws Exception {
+    public void fetchUser_whenIdIsNotValid_thenStatus400() throws Exception {
         String testId = "Gdsa";
 
         mvc.perform(get("/api/users/" + testId).contentType(MediaType.APPLICATION_JSON))
