@@ -60,7 +60,7 @@ public class UserServiceTest {
         Throwable t = Assertions.assertThrows(EntityNotFoundException.class,
                 () -> userService.getUserById(testId));
 
-        assertEquals("The user with id: [" + testId + "] is not exist", t.getMessage());
+        assertEquals("The user with id: [" + testId + "] does not exist", t.getMessage());
     }
 
     @Test

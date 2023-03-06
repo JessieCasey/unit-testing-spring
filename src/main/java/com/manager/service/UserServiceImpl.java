@@ -23,7 +23,7 @@ public class UserServiceImpl implements UserService {
 
             return UserDTO.from(referenceById, getAgeByUser(referenceById));
         } else
-            throw new EntityNotFoundException("The user with id: [" + id + "] " + "is not exist");
+            throw new EntityNotFoundException("The user with id: [" + id + "] " + "does not exist");
     }
 
     @Override

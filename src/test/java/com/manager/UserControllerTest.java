@@ -59,4 +59,17 @@ public class UserControllerTest {
         mvc.perform(get("/api/users/" + testId).contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isBadRequest());
     }
+
+    @Test
+    public void fetchUser_whenIdIsValid_ButUserNotExist_thenStatus400() throws Exception {
+        long testId = Long.MIN_VALUE;
+
+        mvc.perform(get("/api/users/" + testId).contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$.statusCode").value(400))
+                .andExpect(jsonPath("$.message").value("The user with id: [" + testId + "] does not exist"))
+                .andExpect(jsonPath("$.description").value("uri=/api/users/" + testId));
+
+    }
 }
