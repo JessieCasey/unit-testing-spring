@@ -38,7 +38,7 @@ Let's try to send the request to the endpoint.
 }
 ```
 
-If the user doesn't exist the server return the following: 
+If the user doesn't exist, then the server return the following: 
 
 ```
 {
